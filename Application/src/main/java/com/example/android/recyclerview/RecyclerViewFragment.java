@@ -117,8 +117,10 @@ public class RecyclerViewFragment extends Fragment {
         return rawText;
     }
 
-    public void updateEDT(ressourceJSon res){
-        // Request a string response from the provided URL.
+    public void updateEDT(Context context, ressourceJSon res,String formation){
+        URL = "http://planning.admp6.jussieu.fr/jsoncal.aspx?code="+formation;
+
+        queue = Volley.newRequestQueue(context);
         StringRequest stringRequest = new StringRequest(Request.Method.GET, URL,
                 new Response.Listener<String>() {
 
@@ -150,37 +152,6 @@ public class RecyclerViewFragment extends Fragment {
 
     }
 
-    public void getJSonEDT(ressourceJSon res){
-        // Request a string response from the provided URL.
-        JsonArrayRequest JsonRequest = new JsonArrayRequest(Request.Method.GET, URL,null
-                ,new Response.Listener<JSONArray>() {
-            @RequiresApi(api = Build.VERSION_CODES.O)
-            @Override
-            public void onResponse(JSONArray response) {
-                JSonEDT = response;
-                res.setRawJSon(response);
-                EDT = res.getEDT();
-                mAdapter.EDT = res.getEDT();
-                mAdapter.notifyDataSetChanged();
-                Log.i("requete",rawText);
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-
-                Log.e("requete","Erreur lors de la tentative de recuperation des donnees du site");
-                Log.e("requete",error.toString());
-            }
-        });
-
-//      Add the request to the RequestQueue.
-        JsonRequest.setRetryPolicy(new DefaultRetryPolicy(
-                10000,
-                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
-                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
-        queue.add(JsonRequest);
-
-    }
 
 
 
@@ -191,6 +162,10 @@ public class RecyclerViewFragment extends Fragment {
 
     public void updateRecyclerView(ArrayList<Cours> EDT){
         this.EDT = EDT;
+    }
+
+    public void initRecyclerViewEDT(){
+        EDT = new ArrayList<Cours>();
     }
 
     @Override

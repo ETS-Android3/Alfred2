@@ -54,15 +54,16 @@ public class MainActivity extends SampleActivityBase {
         setContentView(R.layout.activity_main);
         RecyclerViewFragment fragment;
 
-        //requete rawRequete = new requete(this.getApplicationContext(),"L2.MECA");
+
         ressourceJSon res = new ressourceJSon();
 
 
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         fragment = new RecyclerViewFragment();
-        fragment.updateRecyclerView(res.getEDT());
-        fragment.requete(this.getApplicationContext(),"L2.MECA");
-        fragment.updateEDT(res);
+
+
+        fragment.initRecyclerViewEDT();
+        fragment.updateEDT(this.getApplicationContext(),res,"L1.SCJ");
 
         transaction.replace(R.id.sample_content_fragment, fragment);
         transaction.commit();
