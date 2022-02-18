@@ -37,7 +37,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
     //private String[] mDataSet;
 
-    private ArrayList<Cours> EDT;
+    public ArrayList<Cours> EDT = new ArrayList<Cours>();
 
     // BEGIN_INCLUDE(recyclerViewSampleViewHolder)
     /**
@@ -49,6 +49,12 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         private final TextView nomSalle;
         private final TextView debut;
         private final TextView fin;
+
+
+
+
+
+
 
         public ViewHolder(View v) {
             super(v);
@@ -67,9 +73,6 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
         }
 
-        //public TextView getTextView() {
-      //      return textView;
-        //}
 
         public TextView getTitreCours(){return TitreCours;}
         public TextView getNomSalle(){return nomSalle;}
@@ -78,17 +81,17 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     }
     // END_INCLUDE(recyclerViewSampleViewHolder)
 
-    /**
-     * Initialize the dataset of the Adapter.
-     *
-     //* @param dataSet String[] containing the data to populate views to be used by RecyclerView.
-     */
-//    public CustomAdapter(String[] dataSet) {
-//        mDataSet = dataSet;
-//    }
+
 
     public CustomAdapter(ArrayList<Cours> EDT){
         this.EDT = EDT;
+        notifyDataSetChanged();
+    }
+
+    public void setEDT(ArrayList<Cours> EDT) {
+        this.EDT.clear();
+        this.EDT =EDT;
+        notifyDataSetChanged();
     }
 
     // BEGIN_INCLUDE(recyclerViewOnCreateViewHolder)

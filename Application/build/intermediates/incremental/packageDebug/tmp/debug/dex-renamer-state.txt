@@ -1,4 +1,4 @@
-#Fri Feb 18 12:36:43 CET 2022
+#Fri Feb 18 17:35:05 CET 2022
 base.0=C\:\\Users\\yoyoc\\Desktop\\RecyclerView\\Application\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 renamed.0=classes.dex
 path.0=classes.dex

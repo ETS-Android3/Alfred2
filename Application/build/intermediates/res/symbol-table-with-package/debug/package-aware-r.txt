@@ -832,6 +832,8 @@ layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 layout text_row_item
 menu main
+menu vue_jour
+menu vue_semaine
 string TitreCours
 string abc_action_bar_home_description
 string abc_action_bar_up_description
@@ -1291,3 +1293,4 @@ styleable Toolbar android_gravity android_minHeight buttonGravity collapseConten
 styleable View android_theme android_focusable paddingEnd paddingStart theme
 styleable ViewBackgroundHelper android_background backgroundTint backgroundTintMode
 styleable ViewStubCompat android_id android_layout android_inflatedId
+xml network_security_config

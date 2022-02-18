@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Fri Feb 18 01:14:41 CET 2022
+#Fri Feb 18 17:35:05 CET 2022
 0.base=C\:\\Users\\yoyoc\\Desktop\\RecyclerView\\Application\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 0.path=classes.dex
 count=1

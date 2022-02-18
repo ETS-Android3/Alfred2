@@ -16,17 +16,34 @@
 
 package com.example.android.recyclerview;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RadioButton;
 
+import com.android.volley.DefaultRetryPolicy;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.android.SiteUPMC.Cours;
+import com.example.android.SiteUPMC.ressourceJSon;
+import com.example.android.requete.requete;
+
+import org.json.JSONArray;
 
 import java.util.ArrayList;
 
@@ -52,12 +69,127 @@ public class RecyclerViewFragment extends Fragment {
     protected RadioButton mGridLayoutRadioButton;
 
     protected RecyclerView mRecyclerView;
-    protected CustomAdapter mAdapter;
+    public CustomAdapter mAdapter;
     protected RecyclerView.LayoutManager mLayoutManager;
     protected String[] mDataset;
     protected ArrayList<Cours> EDT;
 
-    public RecyclerViewFragment(ArrayList<Cours> EDT){
+
+    private String rawText = new String();
+    private JSONArray JSonEDT = new JSONArray();
+    private String URL = new String();
+
+    RequestQueue queue;
+
+    public void requete(Context context, String formation){
+        URL = "http://planning.admp6.jussieu.fr/jsoncal.aspx?code="+formation;
+        //URL ="https://www.google.com";
+        queue = Volley.newRequestQueue(context);
+
+    }
+
+    public String getStringEDT(){
+        // Request a string response from the provided URL.
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, URL,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        // Display the first 500 characters of the response string.
+                        rawText = response;
+                        Log.i("requete",rawText);
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                rawText="That didn't work!";
+                Log.e("requete","Erreur lors de la tentative de recuperation des donnees du site");
+                Log.e("requete",error.toString());
+            }
+        });
+
+//      Add the request to the RequestQueue.
+        stringRequest.setRetryPolicy(new DefaultRetryPolicy(
+                10000,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+        queue.add(stringRequest);
+        Log.i("requete",rawText);
+        return rawText;
+    }
+
+    public void updateEDT(ressourceJSon res){
+        // Request a string response from the provided URL.
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, URL,
+                new Response.Listener<String>() {
+
+                    @Override
+                    public void onResponse(String response) {
+                        // Display the first 500 characters of the response string.
+                        rawText = response;
+                        res.setRaw(rawText);
+                        EDT = res.getEDT();
+                        mAdapter.setEDT(EDT);
+
+                        Log.i("requete",EDT.toString());
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                rawText="That didn't work!";
+                Log.e("requete","Erreur lors de la tentative de recuperation des donnees du site");
+                Log.e("requete",error.toString());
+            }
+        });
+
+//      Add the request to the RequestQueue.
+        stringRequest.setRetryPolicy(new DefaultRetryPolicy(
+                10000,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+        queue.add(stringRequest);
+
+    }
+
+    public void getJSonEDT(ressourceJSon res){
+        // Request a string response from the provided URL.
+        JsonArrayRequest JsonRequest = new JsonArrayRequest(Request.Method.GET, URL,null
+                ,new Response.Listener<JSONArray>() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
+            @Override
+            public void onResponse(JSONArray response) {
+                JSonEDT = response;
+                res.setRawJSon(response);
+                EDT = res.getEDT();
+                mAdapter.EDT = res.getEDT();
+                mAdapter.notifyDataSetChanged();
+                Log.i("requete",rawText);
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+                Log.e("requete","Erreur lors de la tentative de recuperation des donnees du site");
+                Log.e("requete",error.toString());
+            }
+        });
+
+//      Add the request to the RequestQueue.
+        JsonRequest.setRetryPolicy(new DefaultRetryPolicy(
+                10000,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+        queue.add(JsonRequest);
+
+    }
+
+
+
+
+    public CustomAdapter getmAdapter() {
+        return mAdapter;
+    }
+
+    public void updateRecyclerView(ArrayList<Cours> EDT){
         this.EDT = EDT;
     }
 
@@ -67,7 +199,7 @@ public class RecyclerViewFragment extends Fragment {
 
         // Initialize dataset, this data would usually come from a local content provider or
         // remote server.
-        initDataset();
+
 
     }
 
@@ -162,12 +294,7 @@ public class RecyclerViewFragment extends Fragment {
      * Generates Strings for RecyclerView's adapter. This data would usually come
      * from a local content provider or remote server.
      */
-    private void initDataset() {
-        mDataset = new String[DATASET_COUNT];
-        for (int i = 0; i < DATASET_COUNT; i++) {
-            mDataset[i] = "This is element #" + i;
-        }
-    }
+
 
     public void initEDT(ArrayList<Cours> EDT){
         this.EDT = EDT;

@@ -17,7 +17,9 @@
 
 package com.example.android.recyclerview;
 
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.Menu;
@@ -31,6 +33,7 @@ import com.example.android.common.logger.Log;
 import com.example.android.common.logger.LogFragment;
 import com.example.android.common.logger.LogWrapper;
 import com.example.android.common.logger.MessageOnlyLogFilter;
+import com.example.android.requete.requete;
 
 import java.util.ArrayList;
 
@@ -44,21 +47,31 @@ public class MainActivity extends SampleActivityBase {
     // Whether the Log Fragment is currently shown
     private boolean mLogShown;
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        RecyclerViewFragment fragment;
+
+        //requete rawRequete = new requete(this.getApplicationContext(),"L2.MECA");
         ressourceJSon res = new ressourceJSon();
 
 
-        if (savedInstanceState == null) {
-            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-            RecyclerViewFragment fragment = new RecyclerViewFragment(res.getEDT());
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        fragment = new RecyclerViewFragment();
+        fragment.updateRecyclerView(res.getEDT());
+        fragment.requete(this.getApplicationContext(),"L2.MECA");
+        fragment.updateEDT(res);
+
+        transaction.replace(R.id.sample_content_fragment, fragment);
+        transaction.commit();
 
 
-            transaction.replace(R.id.sample_content_fragment, fragment);
-            transaction.commit();
-        }
+
+
+
+
     }
 
     @Override

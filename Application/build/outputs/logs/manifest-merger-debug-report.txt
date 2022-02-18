@@ -1,13 +1,14 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\yoyoc\Desktop\RecyclerView\Application\src\main\AndroidManifest.xml:18:1-40:12
-INJECTED from C:\Users\yoyoc\Desktop\RecyclerView\Application\src\main\AndroidManifest.xml:18:1-40:12
-INJECTED from C:\Users\yoyoc\Desktop\RecyclerView\Application\src\main\AndroidManifest.xml:18:1-40:12
+ADDED from C:\Users\yoyoc\Desktop\RecyclerView\Application\src\main\AndroidManifest.xml:18:1-47:12
+INJECTED from C:\Users\yoyoc\Desktop\RecyclerView\Application\src\main\AndroidManifest.xml:18:1-47:12
+INJECTED from C:\Users\yoyoc\Desktop\RecyclerView\Application\src\main\AndroidManifest.xml:18:1-47:12
 MERGED from [com.android.support:support-v13:28.0.0] C:\Users\yoyoc\.gradle\caches\transforms-2\files-2.1\eb8ca13c46206d6c1104522daf8ce658\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:recyclerview-v7:24.0.0] C:\Users\yoyoc\.gradle\caches\transforms-2\files-2.1\31b833e2b199b770f3b06f3335e71e25\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-v4:28.0.0] C:\Users\yoyoc\.gradle\caches\transforms-2\files-2.1\5c9e1d29f2b181eaf1938ce3073fe2d0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\yoyoc\.gradle\caches\transforms-2\files-2.1\08cb59a94999434efaa38c67acf97863\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\yoyoc\.gradle\caches\transforms-2\files-2.1\b0e1fc1b9f459e822b84f4114df94646\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.volley:volley:1.2.1] C:\Users\yoyoc\.gradle\caches\transforms-2\files-2.1\1d18fee26fa7937c0dfb96a4f089008d\AndroidManifest.xml:2:1-7:12
 MERGED from [com.android.support:support-media-compat:28.0.0] C:\Users\yoyoc\.gradle\caches\transforms-2\files-2.1\ebcf816dafd0d14d337c4661201076ce\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\yoyoc\.gradle\caches\transforms-2\files-2.1\70ebc39d8f5c6bb0c711a42c686c832f\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\yoyoc\.gradle\caches\transforms-2\files-2.1\36ac4ce4609354aa8ced4711748e2dbd\AndroidManifest.xml:17:1-22:12
@@ -34,22 +35,32 @@ MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\yoyoc\.gradle\cach
 MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\yoyoc\.gradle\caches\transforms-2\files-2.1\b63376cbe1ee93e9f7f761c97146737d\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\yoyoc\.gradle\caches\transforms-2\files-2.1\5cf48991fd3477b2b71d4ff223c03503\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.1] C:\Users\yoyoc\.gradle\caches\transforms-2\files-2.1\5eb4ba8c440d6414f4f87fa9d43a4bdf\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\Users\yoyoc\Desktop\RecyclerView\Application\src\main\AndroidManifest.xml:18:1-40:12
-INJECTED from C:\Users\yoyoc\Desktop\RecyclerView\Application\src\main\AndroidManifest.xml:18:1-40:12
+INJECTED from C:\Users\yoyoc\Desktop\RecyclerView\Application\src\main\AndroidManifest.xml:18:1-47:12
+INJECTED from C:\Users\yoyoc\Desktop\RecyclerView\Application\src\main\AndroidManifest.xml:18:1-47:12
 	package
-		ADDED from C:\Users\yoyoc\Desktop\RecyclerView\Application\src\main\AndroidManifest.xml:19:5-47
+		ADDED from C:\Users\yoyoc\Desktop\RecyclerView\Application\src\main\AndroidManifest.xml:20:5-47
 	android:versionName
-		ADDED from C:\Users\yoyoc\Desktop\RecyclerView\Application\src\main\AndroidManifest.xml:21:5-30
+		ADDED from C:\Users\yoyoc\Desktop\RecyclerView\Application\src\main\AndroidManifest.xml:22:5-30
 		INJECTED from C:\Users\yoyoc\Desktop\RecyclerView\Application\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\yoyoc\Desktop\RecyclerView\Application\src\main\AndroidManifest.xml
+	xmlns:tools
+		ADDED from C:\Users\yoyoc\Desktop\RecyclerView\Application\src\main\AndroidManifest.xml:19:5-51
 	xmlns:android
 		ADDED from C:\Users\yoyoc\Desktop\RecyclerView\Application\src\main\AndroidManifest.xml:18:11-69
 	android:versionCode
-		ADDED from C:\Users\yoyoc\Desktop\RecyclerView\Application\src\main\AndroidManifest.xml:20:5-28
+		ADDED from C:\Users\yoyoc\Desktop\RecyclerView\Application\src\main\AndroidManifest.xml:21:5-28
 		INJECTED from C:\Users\yoyoc\Desktop\RecyclerView\Application\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\yoyoc\Desktop\RecyclerView\Application\src\main\AndroidManifest.xml
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\yoyoc\Desktop\RecyclerView\Application\src\main\AndroidManifest.xml:23:5-67
+	android:name
+		ADDED from C:\Users\yoyoc\Desktop\RecyclerView\Application\src\main\AndroidManifest.xml:23:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from C:\Users\yoyoc\Desktop\RecyclerView\Application\src\main\AndroidManifest.xml:24:5-79
+	android:name
+		ADDED from C:\Users\yoyoc\Desktop\RecyclerView\Application\src\main\AndroidManifest.xml:24:22-76
 application
-ADDED from C:\Users\yoyoc\Desktop\RecyclerView\Application\src\main\AndroidManifest.xml:25:5-37:19
+ADDED from C:\Users\yoyoc\Desktop\RecyclerView\Application\src\main\AndroidManifest.xml:28:5-44:19
 MERGED from [com.android.support:support-compat:28.0.0] C:\Users\yoyoc\.gradle\caches\transforms-2\files-2.1\b79b831493292117114c1b8f00ceebc7\AndroidManifest.xml:22:5-94
 MERGED from [com.android.support:support-compat:28.0.0] C:\Users\yoyoc\.gradle\caches\transforms-2\files-2.1\b79b831493292117114c1b8f00ceebc7\AndroidManifest.xml:22:5-94
 MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\yoyoc\.gradle\caches\transforms-2\files-2.1\f43da87d53fe7e978f50955c245115a4\AndroidManifest.xml:22:5-23:19
@@ -57,29 +68,31 @@ MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\yoyoc\.gra
 	android:appComponentFactory
 		ADDED from [com.android.support:support-compat:28.0.0] C:\Users\yoyoc\.gradle\caches\transforms-2\files-2.1\b79b831493292117114c1b8f00ceebc7\AndroidManifest.xml:22:18-91
 	android:label
-		ADDED from C:\Users\yoyoc\Desktop\RecyclerView\Application\src\main\AndroidManifest.xml:26:9-41
+		ADDED from C:\Users\yoyoc\Desktop\RecyclerView\Application\src\main\AndroidManifest.xml:29:9-41
 	android:icon
-		ADDED from C:\Users\yoyoc\Desktop\RecyclerView\Application\src\main\AndroidManifest.xml:27:9-45
+		ADDED from C:\Users\yoyoc\Desktop\RecyclerView\Application\src\main\AndroidManifest.xml:30:9-45
 	android:allowBackup
-		ADDED from C:\Users\yoyoc\Desktop\RecyclerView\Application\src\main\AndroidManifest.xml:25:18-44
+		ADDED from C:\Users\yoyoc\Desktop\RecyclerView\Application\src\main\AndroidManifest.xml:28:18-44
 	android:theme
-		ADDED from C:\Users\yoyoc\Desktop\RecyclerView\Application\src\main\AndroidManifest.xml:28:9-40
+		ADDED from C:\Users\yoyoc\Desktop\RecyclerView\Application\src\main\AndroidManifest.xml:31:9-40
+	android:networkSecurityConfig
+		ADDED from C:\Users\yoyoc\Desktop\RecyclerView\Application\src\main\AndroidManifest.xml:33:9-69
 activity#com.example.android.recyclerview.MainActivity
-ADDED from C:\Users\yoyoc\Desktop\RecyclerView\Application\src\main\AndroidManifest.xml:30:9-36:20
+ADDED from C:\Users\yoyoc\Desktop\RecyclerView\Application\src\main\AndroidManifest.xml:37:9-43:20
 	android:label
-		ADDED from C:\Users\yoyoc\Desktop\RecyclerView\Application\src\main\AndroidManifest.xml:31:19-51
+		ADDED from C:\Users\yoyoc\Desktop\RecyclerView\Application\src\main\AndroidManifest.xml:38:19-51
 	android:name
-		ADDED from C:\Users\yoyoc\Desktop\RecyclerView\Application\src\main\AndroidManifest.xml:30:19-47
+		ADDED from C:\Users\yoyoc\Desktop\RecyclerView\Application\src\main\AndroidManifest.xml:37:19-47
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\yoyoc\Desktop\RecyclerView\Application\src\main\AndroidManifest.xml:32:13-35:29
+ADDED from C:\Users\yoyoc\Desktop\RecyclerView\Application\src\main\AndroidManifest.xml:39:13-42:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\yoyoc\Desktop\RecyclerView\Application\src\main\AndroidManifest.xml:33:17-69
+ADDED from C:\Users\yoyoc\Desktop\RecyclerView\Application\src\main\AndroidManifest.xml:40:17-69
 	android:name
-		ADDED from C:\Users\yoyoc\Desktop\RecyclerView\Application\src\main\AndroidManifest.xml:33:25-66
+		ADDED from C:\Users\yoyoc\Desktop\RecyclerView\Application\src\main\AndroidManifest.xml:40:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\yoyoc\Desktop\RecyclerView\Application\src\main\AndroidManifest.xml:34:17-77
+ADDED from C:\Users\yoyoc\Desktop\RecyclerView\Application\src\main\AndroidManifest.xml:41:17-77
 	android:name
-		ADDED from C:\Users\yoyoc\Desktop\RecyclerView\Application\src\main\AndroidManifest.xml:34:27-74
+		ADDED from C:\Users\yoyoc\Desktop\RecyclerView\Application\src\main\AndroidManifest.xml:41:27-74
 uses-sdk
 INJECTED from C:\Users\yoyoc\Desktop\RecyclerView\Application\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\yoyoc\Desktop\RecyclerView\Application\src\main\AndroidManifest.xml
@@ -94,6 +107,8 @@ MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\yoyoc\.gradle\cach
 MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\yoyoc\.gradle\caches\transforms-2\files-2.1\08cb59a94999434efaa38c67acf97863\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\yoyoc\.gradle\caches\transforms-2\files-2.1\b0e1fc1b9f459e822b84f4114df94646\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\yoyoc\.gradle\caches\transforms-2\files-2.1\b0e1fc1b9f459e822b84f4114df94646\AndroidManifest.xml:20:5-44
+MERGED from [com.android.volley:volley:1.2.1] C:\Users\yoyoc\.gradle\caches\transforms-2\files-2.1\1d18fee26fa7937c0dfb96a4f089008d\AndroidManifest.xml:5:5-43
+MERGED from [com.android.volley:volley:1.2.1] C:\Users\yoyoc\.gradle\caches\transforms-2\files-2.1\1d18fee26fa7937c0dfb96a4f089008d\AndroidManifest.xml:5:5-43
 MERGED from [com.android.support:support-media-compat:28.0.0] C:\Users\yoyoc\.gradle\caches\transforms-2\files-2.1\ebcf816dafd0d14d337c4661201076ce\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-media-compat:28.0.0] C:\Users\yoyoc\.gradle\caches\transforms-2\files-2.1\ebcf816dafd0d14d337c4661201076ce\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\yoyoc\.gradle\caches\transforms-2\files-2.1\70ebc39d8f5c6bb0c711a42c686c832f\AndroidManifest.xml:20:5-44

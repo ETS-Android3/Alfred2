@@ -3,8 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/yoyoc/Desktop/RecyclerView/Application/src/main/res/layout-w720dp/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/yoyoc/Desktop/RecyclerView/Application/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/yoyoc/Desktop/RecyclerView/Application/src/main/res/layout/recycler_view_frag.xml" value="0.12708333333333333" />
         <entry key="..\:/Users/yoyoc/Desktop/RecyclerView/Application/src/main/res/layout/text_row_item.xml" value="0.4" />
+        <entry key="..\:/Users/yoyoc/Desktop/RecyclerView/Application/src/main/res/menu/main.xml" value="0.12708333333333333" />
+        <entry key="..\:/Users/yoyoc/Desktop/RecyclerView/Application/src/main/res/menu/vue_jour.xml" value="0.12708333333333333" />
+        <entry key="..\:/Users/yoyoc/Desktop/RecyclerView/Application/src/main/res/menu/vue_semaine.xml" value="0.12708333333333333" />
+        <entry key="..\:/Users/yoyoc/Desktop/RecyclerView/Application/src/main/res/xml/network_security_config.xml" value="0.12318840579710146" />
       </map>
     </option>
   </component>
